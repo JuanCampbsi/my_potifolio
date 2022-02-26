@@ -1,29 +1,21 @@
-import { extendTheme, ChakraProvider} from "@chakra-ui/react";
-import { createBreakpoints } from '@chakra-ui/theme-tools';
-import Main from "./pages/Main";
+import { extendTheme, ChakraProvider } from "@chakra-ui/react";
+import GlobalStyle from "./GlobalStyle";
+import Routes from "./routes";
 
 const config = {
-    initialColorMode: 'dark',
-    useSystemColorMode: false,
-}
+  initialColorMode: "dark",
+  useSystemColorMode: false,
+};
 
-// const breakPoints = createBreakpoints({
-//   smm: '280px',
-//   sm: '320px',
-//   md: '436px',
-//   lg: '960px',
-//   xl: '1200px',
-//   '2xl': '1536px',
-// })
+function App() {
+  const theme = extendTheme({ config });
 
-function App() {   
-  const theme = extendTheme({ config })
-  
   return (
-    <ChakraProvider theme={ theme }>
-      <Main />
+    <ChakraProvider theme={theme}>
+      <GlobalStyle />
+      <Routes />
     </ChakraProvider>
-  )
+  );
 }
 
-export default App
+export default App;
