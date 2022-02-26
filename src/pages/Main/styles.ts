@@ -1,17 +1,22 @@
-import styled, {keyframes } from "styled-components";
+import { NavLink } from "react-router-dom";
+import styled, { keyframes } from "styled-components";
 
-interface ClickProps {
-    click?: boolean;
+export interface ClickProps {
+  click?: boolean;
 }
 
 export const MainContainer = styled.div`
-  background: #1A202C;
+  background: #1a202c;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   position: relative;
 
-  h2, h3, h4, h5, h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: "Karla", sans-serif;
     font-weight: 500;
   }
@@ -20,7 +25,6 @@ export const MainContainer = styled.div`
 export const Container = styled.div`
   padding: 2rem;
 `;
-
 
 export const rotate = keyframes`
 from{
@@ -53,7 +57,7 @@ export const Center = styled.button<ClickProps>`
     display: ${(props: any) => (props.click ? "none" : "inline-block")};
     padding-top: 1rem;
   }
-  @media only screen and (max-width: 30em){    
+  @media only screen and (max-width: 30em) {
     position: absolute;
     width: 40px;
     height: 40px;
@@ -61,8 +65,8 @@ export const Center = styled.button<ClickProps>`
     height: ${(props: any) => (props.click ? "10%" : "25%")};
     left: ${(props: any) => (props.click ? "85%" : "50%")};
   }
-  @media only screen and (max-width: 50em){
-    position: absolute; 
+  @media only screen and (max-width: 50em) {
+    position: absolute;
     width: ${(props: any) => (props.click ? "10%" : "25%")};
     height: ${(props: any) => (props.click ? "10%" : "25%")};
     left: ${(props: any) => (props.click ? "85%" : "50%")};
@@ -80,9 +84,9 @@ export const DarkDiv = styled.div<ClickProps>`
   z-index: 1;
   transition: height 0.5s ease, width 1s ease 0.5s;
 
-  @media (max-width: 50em){
+  @media (max-width: 50em) {
     position: absolute;
-    right: 0px;   
+    right: 0px;
     width: ${(props: any) => (props.click ? "100%" : "0%")};
     height: ${(props: any) => (props.click ? "50%" : "0%")};
     transition: width 0.5s ease 0s, height 1s ease 0.5s;
@@ -91,16 +95,42 @@ export const DarkDiv = styled.div<ClickProps>`
 
 export const LogoComponent = styled.h1<ClickProps>`
   display: inline;
-  font-family: 'Pacifico',cursive;
   position: fixed;
   left: 2rem;
-  top: 2rem;
-  z-index:3;
+  top: 1rem;
+  z-index: 3;
   color: ${(props: any) => (props.click ? "#1A202C" : "#ffff 3s")};
-  font-size: 32px;
+  font-size: 35px;
 
-  @media only screen and (max-width: 50em){
+  @media only screen and (max-width: 50em) {
     position: absolute;
     font-size: 24px;
+    top: 1.5rem;
   }
-`
+`;
+
+export const BottomBar = styled.div`
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+`;
+
+export const About = styled(NavLink)`
+  color: ${(props: ClickProps) => (props.click ? '#1A202C' : '#fff')};
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 1;
+
+  @media only screen and (max-width: 50em) {
+    color: #fff;
+  }
+`;
+export const Works = styled(NavLink)`
+  color: #fff;
+  text-decoration: none;
+  z-index: 1;
+`;

@@ -33,5 +33,6 @@ export const Power = styled.button`
     @media (max-width: 50em){
         background-color: #1A202C;
         position: relative;
+        top: 1rem;
     }
 `;

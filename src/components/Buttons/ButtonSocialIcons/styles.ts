@@ -22,7 +22,13 @@ export const Icons = styled.button<ClickProps>`
        
     color: ${(props) => props.click ? '#1A202C': 'currentColor'} ;
 
-    @media (max-width: 40em){
+    @media (max-width: 50em){
+        left: 1rem;
+        color:  #ffff !important;
+    }
+
+    @media (max-width: 30em){
+        bottom: 0;
         left: 1rem;
         color:  #ffff !important;
     }
@@ -33,6 +39,11 @@ export const Line = styled(motion.span)<ClickProps>`
     width: 2px;
     height: 8rem;
     background-color: ${(props) => props.click ? '#1A202C': 'currentColor'} ;
+   
+    @media (max-width: 50em){
+        left: 1rem;
+        background-color: #ffff !important;
+    }
 
     @media (max-width: 40em){
         left: 1rem;

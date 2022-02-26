@@ -15,9 +15,9 @@ const Intro = ({ click }: IntroProps) => {
     >
       <SubBox>
         <Text>
-          <h1>Hi,</h1>
-          <h3>I'm Juan Campos</h3>
-          <h6>Tech Enthusiast and a Explorer always.</h6>
+          <h1>Hello, </h1>
+          <h3>Welcome to my website.</h3>
+          {/* <h6>I'm a technology, enthusiast.</h6> */}
         </Text>
       </SubBox>
       <SubBox>
